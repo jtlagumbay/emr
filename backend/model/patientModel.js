@@ -12,8 +12,11 @@ const patientSchema = mongoose.Schema({
   },
   sex: {
     type: String,
-    enum: ['f', 'm'],
+    enum: ['f', 'm', 'b'],
     required:[true, 'Sex is required']
+  },
+  number: {
+    type: String,
   },
   emergency_name: {
     type: String
@@ -21,9 +24,9 @@ const patientSchema = mongoose.Schema({
   emergency_no: {
     type: String
   },
-  email: {
+  username: {
     type: String,
-    required:[true, 'email is required'],
+    required:[true, 'username is required'],
     unique: true
   },
   password: {

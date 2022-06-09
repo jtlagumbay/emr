@@ -12,6 +12,8 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use('/emr/api/patients', require('./routes/patientRoutes.js'))
+app.use('/emr/api/doctors', require('./routes/doctorRoutes.js'))
+app.use('/emr/api/diagnosis', require('./routes/diagnosisRoutes.js'))
 app.use(errorHandler)
 
 app.listen(port, ()=>{console.log(`listening to port ${port}`)})

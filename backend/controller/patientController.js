@@ -40,6 +40,7 @@ const getPatient = asyncHandler(async (req, res) => {
     name: patient.name,
     b_day: patient.b_day,
     sex: patient.sex,
+    contact_no: patient.contact_no,
     emergency_name: patient.emergency_name,
     emergency_no: patient.emergency_no
   })
@@ -48,7 +49,7 @@ const getPatient = asyncHandler(async (req, res) => {
 // @route POST emr/api/patients/create
 // access Private
 const createPatient = asyncHandler(async (req, res) => {
-  const {name, b_day, sex, email, password, emergency_name, emergency_no} = req.body
+  const {name, b_day, sex, contact_no, username, password, emergency_name, emergency_no} = req.body
   if(!name){
     res.status(400)
     throw new Error('name is required')
@@ -61,9 +62,9 @@ const createPatient = asyncHandler(async (req, res) => {
     res.status(400)
     throw new Error('sex is required')
   }
-  if(!email){
+  if(!username){
     res.status(400)
-    throw new Error('email is required')
+    throw new Error('username is required')
   }
   if(!password){
     res.status(400)
@@ -71,7 +72,7 @@ const createPatient = asyncHandler(async (req, res) => {
   }
 
   // Check if patient already exists
-  const patientExists = await Patient.findOne({email})
+  const patientExists = await Patient.findOne({username})
   if(patientExists){
     res.status(400)
     throw new Error('patient already exists ')
@@ -84,9 +85,10 @@ const createPatient = asyncHandler(async (req, res) => {
     name: name,
     sex: sex,
     b_day: b_day,
+    contact_no: contact_no,
     emergency_name: emergency_name,
     emergency_no: emergency_no,
-    email: email,
+    username: username,
     password: hashedPassword,
   })
 
@@ -95,7 +97,7 @@ const createPatient = asyncHandler(async (req, res) => {
       message:"patient sucessfully created",
       _id:patient._id,
       name:patient.name,
-      email:patient.email
+      username:patient.username
     })
   } else {
     res.status(400)
@@ -140,25 +142,24 @@ const deletePatient = asyncHandler(async (req, res) => {
 // @route POST emr/api/patients/login
 // access Public
 const loginPatient = asyncHandler(async (req, res) => {
-  const {email, password} = req.body
+  const {username, password} = req.body
 
-  if(!email){
+  if(!username){
     res.status(400)
-    throw new Error("email required")
+    throw new Error("username required")
   }
   if(!password){
     res.status(400)
     throw new Error("password required")
   }
 
-  const patient = await Patient.findOne({email: email})
+  const patient = await Patient.findOne({username: username})
   if(patient && (bcrypt.compareSync(password, patient.password))){
     res.json({
       message: "patient login sucessful",
       _id:patient._id,
       name:patient.name,
-      email:patient.email, 
-      token: generateToken(patient._id)
+      username:patient.username
     })
   } else {
     res.status(400)
