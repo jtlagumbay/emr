@@ -1,9 +1,12 @@
 const express = require("express")
 const router = express.Router()
-const {getAllPatients, createPatient, updatePatient, deletePatient} = require('../controller/patientController')
+const {getAllPatients, createPatient, updatePatient, deletePatient, loginPatient, getPatient} = require('../controller/patientController')
+// const {protect} = require('../middleware/authMiddleware.js')
 
 
-router.post('/getAll', getAllPatients)
+router.post('/login', loginPatient)
+router.get('/getAll', getAllPatients)
+router.post('/get/:id', getPatient)
 router.post('/create', createPatient)
 router.post('/update/:id', updatePatient)
 router.post('/delete/:id', deletePatient)
