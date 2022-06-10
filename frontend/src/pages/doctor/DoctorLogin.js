@@ -1,86 +1,89 @@
-import React, {useEffect, useState, useSyncExternalStore} from 'react'
-import toast from 'react-hot-toast'
-import {useForm} from "react-hook-form"
-import { getAllDoctors, loginDoctor } from '../../utilities/apiCalls/doctorAPI'
+import React, { useEffect, useState, useSyncExternalStore } from "react";
+import toast from "react-hot-toast";
+import { useForm } from "react-hook-form";
+import { getAllDoctors, loginDoctor } from "../../utilities/apiCalls/doctorAPI";
 
+import "./DoctorLogin.css";
+
+//images
+import Username from "../../assets/doctorlogin/un.png";
+import Password from "../../assets/doctorlogin/pw.png";
 
 const loginData = {
-  username:"",
-  password:"",
-}
+  username: "",
+  password: "",
+};
 export default function DoctorLogin() {
-
   const [formData, setFormData] = useState({
-    username:"",
-    password:""
-  })
+    username: "",
+    password: "",
+  });
 
-  const {username, password} = formData
+  const { username, password } = formData;
 
   const handleChange = (e) => {
-    setFormData((prev)=>({
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
-    }))
-  }
+      [e.target.name]: e.target.value,
+    }));
+  };
 
-  const login = async (e) =>{
-    e.preventDefault()
-    var axios = require('axios');
-    var qs = require('qs');
+  const login = async (e) => {
+    e.preventDefault();
+    var axios = require("axios");
+    var qs = require("qs");
     var data = qs.stringify({
-      'username': 'drLaLa123',
-      'password': '1234' 
+      username: "drLaLa123",
+      password: "1234",
     });
     var config = {
-      method: 'post',
-      url: 'http://localhost:5000/emr/api/doctors/login',
-      headers: { 
-        'api_key': 'erty123', 
-        'Content-Type': 'application/x-www-form-urlencoded'
+      method: "post",
+      url: "http://localhost:5000/emr/api/doctors/login",
+      headers: {
+        api_key: "erty123",
+        "Content-Type": "application/x-www-form-urlencoded",
       },
-      data : data
+      data: data,
     };
 
     axios(config)
-    .then(function (response) {
-      console.log(response.data);
-      localStorage.setItem("_id", response.data._id)
-      localStorage.setItem("type", "doctor")
-      toast.success(response.data.message.toUpperCase())
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-
-  }
-
-
+      .then(function (response) {
+        console.log(response.data);
+        localStorage.setItem("_id", response.data._id);
+        localStorage.setItem("type", "doctor");
+        toast.success(response.data.message.toUpperCase());
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 
   return (
-    <div>
+    <div className="portal-cont">
       <div>
-        <h1>DOCTORS PORTAL</h1>
-        <form onSubmit={e=>{login(e)}} >
-          <input 
-            type="text"
-            required
+        <h1 className="head">DOCTOR PORTAL</h1>
+      </div>
+      <div className="form-group">
+        <div className="input-group">
+          <img src={Username} alt="Username" className="input-logo" />
+          <input
             name="username"
-            placeholder='Username'
-            onChange={e=>{handleChange(e)}}
+            placeholder="Username"
+            className="input-field"
           />
-          <br/>
-          <input 
-            type="password"
-            required
+        </div>
+        <div className="input-group">
+          <img src={Password} alt="Password" className="input-logo" />
+          <input
             name="password"
-            placeholder='Password'
-            onChange={e=>{handleChange(e)}}
+            placeholder="Password"
+            className="input-field"
           />
-          <br/>
-          <input type="submit" />
-        </form>
+        </div>
+      </div>
+      <div className="button-container">
+        <button className="button prim">Login</button>
       </div>
     </div>
-  )
+  );
 }
