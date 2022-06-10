@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import DoctorLogin from './pages/doctor/DoctorLogin.js';
 import Home from './pages/Home.js';
 import PatientLogin from './pages/patient/PatientLogin.js';
+import PatientSignup from './pages/patient/PatientSignup.js';
 
 export default function App() {
 
@@ -14,6 +15,7 @@ export default function App() {
         <Route path='/' element={<Home />} />
         <Route path='/login/doctor' element={<DoctorLogin/>} />
         <Route path='/login/patient' element={<PatientLogin />} />
+        <Route path='/signup/patient' element={<PatientSignup />} />
       </Routes>
     </Router>
     </div>
