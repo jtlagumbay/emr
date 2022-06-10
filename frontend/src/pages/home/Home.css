@@ -1,10 +1,55 @@
 .banner{
     
-/* Rectangle 5 */
-width: 1440px;
-height: 50px;
-left: 0px;
-top: 54px;
+    /* Rectangle 5 */
+    width: 1440px;
+    height: 50px;
+    left: 0px;
+    top: 54px;
+    
+    background: linear-gradient(0deg, #102457, #102457), linear-gradient(0deg, #249249, #249249), #249249;
+    }
+    
+.footer{
 
-background: linear-gradient(0deg, #102457, #102457), linear-gradient(0deg, #249249, #249249), #249249;
+    /* MediVault: A Self-help Medical Record Management System */
+
+    width: 853px;
+    height: 44px;
+    left: 293px;
+    top: 892px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 48px;
+    text-align: center;
+
+    color: #FFFFFF;
 }
+
+.img1 {
+    
+    border: 0px #9799a7;
+    text-align: center;
+    display:block;
+    float: center;
+    margin: auto;
+    padding: 1px;
+  }
+
+  .img2 {
+    
+    border: 0px #9799a7;
+    text-align: center;
+    display:block;
+    float: center;
+    margin: auto;
+    padding: 1px;
+  }
+
+  .center{
+    text-align: center;
+    float: center;
+    align-items: center;
+  }
