@@ -47,6 +47,7 @@ export default function DoctorLogin() {
       console.log(response.data);
       localStorage.setItem("_id", response.data._id)
       localStorage.setItem("type", "doctor")
+      toast.success(response.data.message.toUpperCase())
     })
     .catch(function (error) {
       console.log(error);

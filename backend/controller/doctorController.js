@@ -102,7 +102,7 @@ const loginDoctor = asyncHandler(async (req, res) => {
 
   const doctor = await Doctor.findOne({username: username})
   if(doctor && (bcrypt.compareSync(password, doctor.password))){
-    res.json({
+    res.status(200).json({
       message: "patient login sucessful",
       _id:doctor._id,
       name:doctor.name,
