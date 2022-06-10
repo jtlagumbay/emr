@@ -2,18 +2,21 @@ import React, { useEffect, useState, useSyncExternalStore } from "react";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import { getAllDoctors, loginDoctor } from "../../utilities/apiCalls/doctorAPI";
+import { useNavigate } from "react-router-dom";
 
+//css
 import "./DoctorLogin.css";
 
 //images
-import Username from "../../assets/doctorlogin/un.png";
-import Password from "../../assets/doctorlogin/pw.png";
+import Username from "../../assets/doctor/un.png";
+import Password from "../../assets/doctor/pw.png";
 
 const loginData = {
   username: "",
   password: "",
 };
 export default function DoctorLogin() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -81,8 +84,15 @@ export default function DoctorLogin() {
           />
         </div>
       </div>
-      <div className="button-container">
-        <button className="button prim">Login</button>
+      <div className="btn-cont">
+        <button
+          onClick={() => {
+            navigate("/login/doctor/menu");
+          }}
+          className="btn prim"
+        >
+          Login
+        </button>
       </div>
     </div>
   );

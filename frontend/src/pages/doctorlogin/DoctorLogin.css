@@ -45,7 +45,7 @@
     justify-content: center;
     align-items: center;
   }
-  .button{
+  .btn{
     background: #FFFFFF;
     border: 1px solid #FFFFFF;
     border-radius: 10px;
@@ -60,7 +60,7 @@
     background: #ffffff;
     color:#102457;
   }
-  .button-container{
+  .btn-cont{
     margin-top: 1.5rem;
     display: flex;
     justify-content: space-evenly;
