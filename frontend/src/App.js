@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import toast, { Toaster } from "react-hot-toast";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DoctorLogin from "./pages/doctorlogin/DoctorLogin.js";
@@ -5,6 +6,13 @@ import DoctorMenu from "./pages/doctormenu/DoctorMenu.js";
 import Home from "./pages/Home.js";
 import PatientLogin from "./pages/patient/PatientLogin.js";
 import PatientSignup from "./pages/patient/PatientSignup.js";
+=======
+import toast, { Toaster } from 'react-hot-toast';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import DoctorLogin from './pages/doctor/DoctorLogin.js';
+import Home from './pages/home/Home.js';
+import PatientLogin from './pages/patient/PatientLogin.js';
+>>>>>>> Stashed changes
 
 export default function App() {
   return (
