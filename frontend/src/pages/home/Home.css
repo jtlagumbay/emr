@@ -1,0 +1,10 @@
+.banner{
+    
+/* Rectangle 5 */
+width: 1440px;
+height: 50px;
+left: 0px;
+top: 54px;
+
+background: linear-gradient(0deg, #102457, #102457), linear-gradient(0deg, #249249, #249249), #249249;
+}
