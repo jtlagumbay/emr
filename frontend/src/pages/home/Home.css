@@ -28,17 +28,7 @@
     color: #FFFFFF;
 }
 
-.img1 {
-    
-    border: 0px #9799a7;
-    text-align: center;
-    display:block;
-    float: center;
-    margin: auto;
-    padding: 1px;
-  }
-
-  .img2 {
+.img {
     
     border: 0px #9799a7;
     text-align: center;
@@ -49,7 +39,9 @@
   }
 
   .center{
-    text-align: center;
-    float: center;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
