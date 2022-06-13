@@ -14,11 +14,6 @@
 
     /* MediVault: A Self-help Medical Record Management System */
 
-    width: 853px;
-    height: 44px;
-    left: 293px;
-    top: 892px;
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 200;
@@ -26,13 +21,7 @@
     line-height: 48px;
     text-align: center;
 
-    color: #FFFFFF;
-
-    margin-top: 0.8rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    color: #ffffff;
 }
 
   .center{
@@ -44,7 +33,7 @@
   }
 
   .icon{
-    width: 50%;
+    width: 45%;
     margin-bottom: 5%;
     margin-top: 5%;
   }
@@ -73,6 +62,7 @@
     background: #ffffff;
     color:#102457;
   }
+
   .btn-cont{
     margin-top: 1.5rem;
     /* display: flex; */
