@@ -27,7 +27,7 @@ export default function Home() {
             }}
             className="btn prim"
           >
-            Patient Portal
+            Patient
           </button>
         </div>
       
@@ -40,12 +40,15 @@ export default function Home() {
             }}
             className="btn prim"
           >
-            Doctor Portal
+            Doctor
           </button>
         </div>
       </div>
-  
-      <div className="banner"></div>
+      <h1>
+      </h1>
+      <div className="banner">
+      <h6 classname="head" style={{color: "white"}}> MediVAULT: A Self-help Medical Record Management System</h6>
+      </div>
     
     </div>
   )
