@@ -45,6 +45,7 @@ export default function PatientDetails() {
       <br/>
       <PatientInfo 
         data = {patientInfo}
+        button={"Edit Profile"}
       />
       <br/>
       <br/>

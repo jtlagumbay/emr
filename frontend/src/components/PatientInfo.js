@@ -1,12 +1,22 @@
 import React from 'react'
 
-export default function PatientInfo({data}) {
-  console.log(data)
+export default function PatientInfo({data, button}) {
+  
+  function renderButton(){
+    if(button.toLowerCase() ==="edit profile"){
+      return <button className="button primary">Edit Profile</button>
+    }
+    else if(button.toLowerCase() === "add diagnosis"){
+      return <button className="button primary">Add diagnosis</button>
+    }
+
+  }
+
   return (
     <div className='section'>
         <div className="d-flex flex-row justify-content-between mb-3">
           <h3 className='section-title m-0'>Patient Details</h3>
-          <button className="button primary">Edit Profile</button>
+          {renderButton()}
         </div>
         
         {/* Patient Details */}
