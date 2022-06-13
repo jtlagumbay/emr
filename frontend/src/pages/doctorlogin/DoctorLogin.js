@@ -87,7 +87,7 @@ export default function DoctorLogin() {
       <div className="btn-cont">
         <button
           onClick={() => {
-            navigate("/login/doctor/menu");
+            navigate("/doctor/menu");
           }}
           className="btn prim"
         >
