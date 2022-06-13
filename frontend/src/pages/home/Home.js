@@ -15,30 +15,23 @@ export default function Home() {
       <h1 style={{ color: "white"}}>MediVault</h1>
       </div>
 
-      <div className='img1'>
+      <div className="center">
         <img src={patientIcon} alt="patient" width="100" height="100"></img>
-        <button onClick={()=>{navigate('/login/patient')}}>Patient</button>
+        <button onClick={()=>{navigate('/patient/login')}}>Patient</button>
       </div>
-     
 
-      <div className="img2">  
+      <div className="center">  
         <img src={doctorIcon} alt="doctor" width="100" height="100"></img>
-        <button onClick={()=>{navigate('/login/doctor')}}>Doctor</button>
+        <button onClick={()=>{navigate('/doctor/login')}}>Doctor</button>
       
       <div className="banner"> 
-      
       <div className="footer">
 
       <h6 style={{ color: "white"}}>MediVault: A Self-help Medical Record Management System</h6>
       </div>
-      
-      
       </div>
-
         </div>
-      
-
-
     </div>
   )
 }
+
