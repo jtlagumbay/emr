@@ -8,30 +8,45 @@ import '../home/Home.css'
 
 
 export default function Home() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
-<div>
-      <div className="banner"> 
-      <h1 style={{ color: "white"}}>MediVault</h1>
-      </div>
+    <div className="">
+      <div className='banner'></div>
 
-      <div className="center">
-        <img src={patientIcon} alt="patient" width="100" height="100"></img>
-        <button onClick={()=>{navigate('/patient/login')}}>Patient</button>
-      </div>
+      <div>
+        <h1 className="head">MediVAULT</h1>
+         </div>
 
-      <div className="center">  
-        <img src={doctorIcon} alt="doctor" width="100" height="100"></img>
-        <button onClick={()=>{navigate('/doctor/login')}}>Doctor</button>
-      
-      <div className="banner"> 
-      <div className="footer">
-
-      <h6 style={{ color: "white"}}>MediVault: A Self-help Medical Record Management System</h6>
-      </div>
-      </div>
+      <div className="menu-group">
+        {/*  */}
+        <div className="menu-item">
+          <img src={patientIcon} alt="patient" className="icon" />
+          <button
+            onClick={() => {
+              navigate("/patient/login");
+            }}
+            className="btn prim"
+          >
+            Patient Portal
+          </button>
         </div>
+      
+        {/*  */}
+        <div className="menu-item">
+          <img src={doctorIcon} alt="display" className="icon" />
+          <button
+            onClick={() => {
+              navigate("doctor/login");
+            }}
+            className="btn prim"
+          >
+            Doctor Portal
+          </button>
+        </div>
+      </div>
+  
+      <div className="banner"></div>
+    
     </div>
   )
 }
-
