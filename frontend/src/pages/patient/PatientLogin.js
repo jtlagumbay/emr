@@ -34,7 +34,7 @@ export default function PatientLogin() {
       </div>
       <div className="button-container">
         <button className="button secondary" onClick={()=>navigate('/patient/signup')}>Sign up</button>
-        <button className="button primary">Login</button>
+        <button className="button primary" onClick={()=>navigate('/patient/details')}>Login</button>
       </div>
     </div>
   );

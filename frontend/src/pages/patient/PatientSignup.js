@@ -21,7 +21,7 @@ export default function PatientSignup() {
               className="input-form"
             />
           </div>
-          <div className="col-6">
+          <div className="col-md-6">
             <label>Birthdate</label>
             <br />
             <input 
@@ -35,7 +35,7 @@ export default function PatientSignup() {
         </div>
         <br/>
         <div className="row">
-          <div className="col-6">
+          <div className="col-md-6">
             <label>Sex at Birth</label>
             <br />
             <input 
@@ -60,7 +60,7 @@ export default function PatientSignup() {
             />
             <label htmlFor='b' className="radio-label">B</label>
           </div>
-          <div className="col-6">
+          <div className="col-md-6">
             <label>Contact Number</label>
             <br />
             <input 
@@ -73,7 +73,7 @@ export default function PatientSignup() {
         <br />
         <p className="p-0 m-0 subheader">In case of emergency, contact:</p>
         <div className="row">
-          <div className="col-6">
+          <div className="col-md-6">
             <label>Name</label>
             <br />
             <input 
@@ -82,7 +82,7 @@ export default function PatientSignup() {
               className="input-form"
             />
           </div>
-          <div className="col-6">
+          <div className="col-md-6">
             <label>Contact number</label>
             <br />
             <input 
@@ -95,7 +95,7 @@ export default function PatientSignup() {
         <br/>
         <p className="p-0 m-0 subheader">Login Credentials:</p>
         <div className="row">
-          <div className="col-6">
+          <div className="col-md-6">
             <label>Username</label>
             <br />
             <input 
@@ -104,7 +104,7 @@ export default function PatientSignup() {
               className="input-form"
             />
           </div>
-          <div className="col-6">
+          <div className="col-md-6">
             <label>Password</label>
             <br />
             <input 

@@ -98,3 +98,55 @@ color:#ffff;
 .radio-label{
   margin-right: 1rem !important;
 }
+table {
+  border-collapse: collapse !important;
+}
+td {
+  font-size: 0.8rem;
+}
+th {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+table,
+tr,
+td, th {
+  border: none;
+}
+
+th, td{
+  padding: 0px !important;
+  padding-bottom: 0.4rem !important;
+ 
+}
+
+.section-title{
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.section-subtitle{
+  font-size:0.8rem;
+  font-style: italic;
+}
+
+.section-table{
+  margin-right: 15vw;
+}
+
+.section{
+  border: 0.5px solid rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  padding:1rem;
+  background-color: #FFFFFF;
+}
+.his-header{
+  color:#102457
+}
+.his-button{
+  background: #FFFFFF;
+  border: 0.5px solid rgba(16, 36, 87, 0.5);
+  border-radius: 5px;
+}
+
