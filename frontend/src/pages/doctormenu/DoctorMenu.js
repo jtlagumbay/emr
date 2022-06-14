@@ -23,7 +23,7 @@ export default function DoctorMenu() {
           <img src={Search} alt="search" className="search" />
           <button
             onClick={() => {
-              navigate("/login/doctor/menu/search");
+              navigate("/doctor/menu/search");
             }}
             className="btn prim"
           >
@@ -35,7 +35,7 @@ export default function DoctorMenu() {
           <img src={Display} alt="display" className="search" />
           <button
             onClick={() => {
-              navigate("/login/doctor/menu/display");
+              navigate("/doctor/menu/display");
             }}
             className="btn prim"
           >

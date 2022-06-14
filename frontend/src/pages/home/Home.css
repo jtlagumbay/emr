@@ -1,74 +1,78 @@
-.banner{
-    
-    /* Rectangle 5 */
-    position:static;
-    width: 15000px;
-    height: 50px;
-    left: 0px;
-    top: 54px;
-    
-    background: linear-gradient(0deg, #102457, #102457), linear-gradient(0deg, #249249, #249249), #249249;
-    }
-    
-.footer{
-
-    /* MediVault: A Self-help Medical Record Management System */
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 200;
-    font-size: 20px;
-    line-height: 48px;
-    text-align: center;
-
-    color: #ffffff;
+.banner {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
 }
 
-  .center{
-    margin-top: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.contain {
+  position: absolute;
+  z-index: 100;
+  top: 18%;
+}
 
-  .icon{
-    width: 30%;
-    margin-bottom: 5%;
-    margin-top: 5%;
-  }
-  
-  .head{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 2rem;
-    text-align: center;
-    color: #102457;
-  }
+.footer {
 
-  .btn{
-    background: #102457;
-    border: 1px solid #102457;
-    border-radius: 10px;
-    padding: 0.3rem 0.5rem;
-    width:10vw;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1rem;
-  }
-  .prim{
-    background: #102457;
-    color:#ffffff;
-  }
+  /* MediVault: A Self-help Medical Record Management System */
 
-  .btn-cont{
-    margin-top: 1.5rem;
-    /* display: flex; */
-  }
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 48px;
+  text-align: center;
 
-.menu-item{
+  color: #ffffff;
+}
+
+.center {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 45%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+.headr {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 2rem;
+  text-align: center;
+  color: #000000;
+}
+
+.buttn {
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+  padding: 0.3rem 0.5rem;
+  width: 10vw;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.prima {
+  background: #102457;
+  color: #ffff;
+}
+
+.buttn-cont {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1.5rem;
+  /* display: flex; */
+}
+
+.menu-item {
   margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
