@@ -15,6 +15,7 @@ export default function Home() {
 
       <div>
         <h1 className="head">MediVAULT</h1>
+        <h6>I am a:</h6>
          </div>
 
       <div className="menu-group">
