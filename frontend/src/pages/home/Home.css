@@ -75,3 +75,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.menu-group{
+  margin-top: 0.9rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
