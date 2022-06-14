@@ -3,7 +3,7 @@ import PatientInfo from "../../components/PatientInfo";
 import History from "../../components/History";
 import Search from "../../assets/doctor/sicon.png";
 
-export default function DoctorSearch(){
+export default function DoctorViewPatient(){
   document.body.style = "background: white;";
   const [patientInfo, setPatientInfo] = useState({
     name: "Juana Dela Cruz",

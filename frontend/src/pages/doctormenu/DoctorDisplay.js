@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PatientInfo from "../../components/PatientInfo";
 import History from "../../components/History";
 import Search from "../../assets/doctor/sicon.png";
 
-export default function DoctorSearch(){
+
+export default function DoctorDisplay(){
+  const navigate = useNavigate();
   document.body.style = "background: white;";
   const [patientInfo, setPatientInfo] = useState({
     name: "Juana Dela Cruz",
@@ -59,7 +62,28 @@ export default function DoctorSearch(){
       {/* <br />
       <br /> */}
       <table>
-        hello
+      <tr>
+          <th>Name</th>
+          <th>Sex</th>
+          <th>birthdate</th>
+          <th>Age</th>
+          <th>View</th>
+        </tr>
+        <tr>
+          <td>Anom</td>
+          <td>F</td>
+          <td>2002 - 10 - 12</td>
+          <td>19</td>
+          <td className="btn-cont">          <button
+            onClick={() => {
+              navigate("/doctor/view");
+            }}
+            className="view acc"
+          >
+            Access
+          </button></td>
+        </tr>
+      
       </table>
     </div>
   );
