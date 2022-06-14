@@ -33,7 +33,7 @@
   }
 
   .icon{
-    width: 45%;
+    width: 30%;
     margin-bottom: 5%;
     margin-top: 5%;
   }
@@ -44,12 +44,12 @@
     font-weight: 900;
     font-size: 2rem;
     text-align: center;
-    color: #000000;
+    color: #102457;
   }
 
   .btn{
-    background: #FFFFFF;
-    border: 1px solid #FFFFFF;
+    background: #102457;
+    border: 1px solid #102457;
     border-radius: 10px;
     padding: 0.3rem 0.5rem;
     width:10vw;
@@ -59,8 +59,8 @@
     font-size: 1rem;
   }
   .prim{
-    background: #ffffff;
-    color:#102457;
+    background: #102457;
+    color:#ffffff;
   }
 
   .btn-cont{
