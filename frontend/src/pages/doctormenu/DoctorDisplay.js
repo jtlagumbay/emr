@@ -3,45 +3,44 @@ import { useNavigate } from "react-router-dom";
 import PatientInfo from "../../components/PatientInfo";
 import History from "../../components/History";
 import Search from "../../assets/doctor/sicon.png";
+import NavBar from '../../components/NavBar';
+import AllPatientTable from "../../components/AllPatientTable";
 
 
 export default function DoctorDisplay(){
   const navigate = useNavigate();
   document.body.style = "background: white;";
-  const [patientInfo, setPatientInfo] = useState({
-    name: "Juana Dela Cruz",
-    bday: "Jun 1, 2022",
-    age: "20",
-    sex: "Female",
-    contact_no: "09123445",
-    emergency_name: "Teodora",
-    emergency_contact: "091234",
-  });
+  const patients = [
+    {
+      id:"1",
+      name: "Juana Dela Cruz",
+      sex: "F",
+      bday: "Jun 15, 2002",
+      age: "19",
+    },
+    {
+      id:"2",
+      name: "Juana Dela Cruz",
+      sex: "F",
+      bday: "Jun 15, 2002",
+      age: "19",
+    },
+    {
+      id:"3",
+      name: "Juana Dela Cruz",
+      sex: "F",
+      bday: "Jun 15, 2002",
+      age: "19",
+    },
+  ]
 
-  const [history, setHistory] = useState([
-    {
-      date: "May 1, 2022",
-      doc: "Dr. Steven Strange",
-      diagnosis: "Csadfakhfadlfh",
-    },
-    {
-      date: "May 1, 2022",
-      doc: "Dr. Steven Strange",
-      diagnosis: "Csadfakhfadlfh",
-    },
-    {
-      date: "May 1, 2022",
-      doc: "Dr. Steven Strange",
-      diagnosis: "Csadfakhfadlfh",
-    },
-    {
-      date: "May 1, 2022",
-      doc: "Dr. Steven Strange",
-      diagnosis: "Csadfakhfadlfh",
-    },
-  ]);
-
+  
   return (
+    <>
+     <NavBar 
+        type="doctor"
+        withBack={true}
+      />
 
     <div className="container">
         <div className="sinput-group">
@@ -52,15 +51,12 @@ export default function DoctorDisplay(){
           className="sinput-field"
         />
       </div>
-      {/* <br />
-      <PatientInfo data={patientInfo} button={"Add Diagnosis"} />
-      <br />
-      <br />
 
-      <History data={history} headers={["DATE", "DOCTOR", "DIAGNOSIS", ""]} /> */}
-      {/* Medical Records */}
-      {/* <br />
-      <br /> */}
+      <AllPatientTable 
+        data = {patients}
+        headers = {["NAME", "SEX", "BIRTHDATE", "AGE", ""]}
+      />
+{/*       
       <table>
       <tr>
           <th>Name</th>
@@ -84,7 +80,8 @@ export default function DoctorDisplay(){
           </button></td>
         </tr>
       
-      </table>
+      </table> */}
     </div>
+    </>
   );
 }

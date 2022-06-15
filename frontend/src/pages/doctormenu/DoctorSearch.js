@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PatientInfo from "../../components/PatientInfo";
 import History from "../../components/History";
 import Search from "../../assets/doctor/sicon.png";
+import NavBar from '../../components/NavBar';
 
 export default function DoctorSearch(){
   document.body.style = "background: white;";
@@ -38,8 +39,13 @@ export default function DoctorSearch(){
     },
   ]);
 
-  return (
 
+  return (
+    <>
+    <NavBar 
+        type="doctor"
+        withBack={true}
+      />
     <div className="container">
         <div className="sinput-group">
         <img src={Search} alt="Search Patient Name" className="sinput-logo" />
@@ -50,5 +56,6 @@ export default function DoctorSearch(){
         />
       </div>
     </div>
+    </>
   );
 }

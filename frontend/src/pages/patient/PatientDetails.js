@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import PatientInfo from '../../components/PatientInfo'
 import History from '../../components/History'
+import NavBar from '../../components/NavBar';
 
 export default function PatientDetails() {
   document.body.style = 'background: white;';
@@ -41,11 +42,19 @@ export default function PatientDetails() {
 
 
   return (
+    <>
+    <NavBar 
+        type="patient"
+        data={patientInfo}
+        withBack={false}
+      />
     <div className='container'>
+      
       <br/>
       <PatientInfo 
         data = {patientInfo}
         button={"Edit Profile"}
+        
       />
       <br/>
       <br/>
@@ -58,5 +67,6 @@ export default function PatientDetails() {
       <br/>
       <br/>
     </div>
+    </>
   )
 }
