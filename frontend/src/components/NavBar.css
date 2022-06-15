@@ -1,0 +1,58 @@
+.arrow-icon{
+  width:1rem;
+  margin:0px;
+}
+.arrow-icon:hover{
+    background-color: #e7e7e7;
+}
+.navbar-item{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.navbar{
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem 3rem;
+  overflow-x: hidden;
+  background-color: rgba(239, 239, 239, 0.87);
+  border-bottom: 5px solid #102457;
+  margin-bottom: 1rem;
+}
+.navbar-header{
+  margin:0px;
+  margin-left: 0.3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.navbar-name{
+  margin: 0px;
+  margin-left: 0.4rem;
+  margin-right: 2rem;
+  font-size: 0.7rem;
+  font-weight: 400;
+  line-height: normal;
+}
+.navbar-logo{
+  height:2rem;
+}
+
+.navbar-logout{
+  border: 0px;
+}
+.navbar-logout:hover{
+  background-color: #e7e7e7;
+}
+.logout{
+  margin:0px;
+}
+.navbar-subtitle{
+  margin: 0px;
+  margin-left: 0.4rem;
+  margin-right: 2rem;
+  font-size: 0.6rem;
+  font-weight: 400;
+  line-height: normal;
+}

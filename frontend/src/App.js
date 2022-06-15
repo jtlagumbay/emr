@@ -13,14 +13,17 @@ import PatientSignup from "./pages/patient/PatientSignup.js";
 export default function App() {
   return (
     <div className="App">
-      <Toaster />
+      <Toaster
+        position="bottom-right"
+        reverseOrder={false}
+      />
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/doctor/login" element={<DoctorLogin />} />
           <Route path="/doctor/menu" element={<DoctorMenu />} />
-          <Route path="/doctor/menu/search" element={<DoctorSearch />} />
-          <Route path="/doctor/menu/display" element={<DoctorDisplay />} />
+          <Route path="/doctor/search-patient" element={<DoctorSearch />} />
+          <Route path="/doctor/display-patient" element={<DoctorDisplay />} />
           <Route path="/doctor/view" element={<DoctorViewPatient />} />
           <Route path="/patient/login" element={<PatientLogin />} />
           <Route path="/patient/signup" element={<PatientSignup />} />

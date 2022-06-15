@@ -1,0 +1,34 @@
+.display{
+  border:1px solid #102457;
+  border-radius: 15px !important;
+}
+
+.display-thead{
+  background-color: #102457;
+}
+
+.display-th{
+  color:#fff;
+}
+
+.display-table{
+  border-collapse: collapse;
+  border: 1px  #102457;
+  /* border-radius: 10px; */
+}
+
+thead th:first-child {
+  border-top-left-radius: 15px;
+}
+
+thead th:last-child {
+  border-top-right-radius: 15px;
+}
+
+tbody tr:last-child>td:first-child {
+  border-bottom-left-radius: 15px;
+}
+
+tbody tr:last-child>td:last-child {
+  border-bottom-right-radius: 15px;
+}

@@ -3,6 +3,9 @@ import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import { getAllDoctors, loginDoctor } from "../../utilities/apiCalls/doctorAPI";
 import { useNavigate } from "react-router-dom";
+import NavBar from '../../components/NavBar';
+import { getDoctorInfo, getUserType } from "../../utilities/common";
+
 
 import "./DoctorMenu.css";
 
@@ -12,7 +15,14 @@ import Search from "../../assets/doctor/search.png";
 
 export default function DoctorMenu() {
   const navigate = useNavigate();
+  
   return (
+    <>
+    <NavBar 
+        type="doctor"
+        withBack={false}
+      />
+
     <div className="menu-cont">
       <div>
         <h1 className="head">DOCTOR PORTAL MENU</h1>
@@ -23,7 +33,7 @@ export default function DoctorMenu() {
           <img src={Search} alt="search" className="search" />
           <button
             onClick={() => {
-              navigate("/doctor/menu/search");
+              navigate("/doctor/search-patient");
             }}
             className="btn prim"
           >
@@ -35,7 +45,7 @@ export default function DoctorMenu() {
           <img src={Display} alt="display" className="search" />
           <button
             onClick={() => {
-              navigate("/doctor/menu/display");
+              navigate("/doctor/display-patient");
             }}
             className="btn prim"
           >
@@ -44,5 +54,6 @@ export default function DoctorMenu() {
         </div>
       </div>
     </div>
+    </>
   );
 }

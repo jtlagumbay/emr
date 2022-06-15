@@ -16,6 +16,7 @@ const loginData = {
   password: "",
 };
 export default function DoctorLogin() {
+  localStorage.clear();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
@@ -35,29 +36,61 @@ export default function DoctorLogin() {
     e.preventDefault();
     var axios = require("axios");
     var qs = require("qs");
-    var data = qs.stringify({
-      username: "drLaLa123",
-      password: "1234",
-    });
+    var data = qs.stringify(formData);
     var config = {
       method: "post",
-      url: "http://localhost:5000/emr/api/doctors/login",
+      url: window.$URL+"doctors/login",
       headers: {
-        api_key: "erty123",
+        api_key: window.$API_KEY,
         "Content-Type": "application/x-www-form-urlencoded",
       },
       data: data,
     };
 
     axios(config)
-      .then(function (response) {
+      .then(async function (response) {
         console.log(response.data);
-        localStorage.setItem("_id", response.data._id);
+        let data = await response.data.data.doctor
         localStorage.setItem("type", "doctor");
-        toast.success(response.data.message.toUpperCase());
+        localStorage.setItem("doc_id", data._id);
+        localStorage.setItem("doc_name", data.name);
+        localStorage.setItem("doc_specialization", data.specialization);
+        localStorage.setItem("doc_username", data.username);
+        toast.success(response.data.message,{
+          style: {
+            borderRadius: '10px',
+            background: '#333',
+            color: '#fff',
+          },
+          duration:3000
+        });
+        setTimeout(()=>{
+          navigate("/doctor/menu")
+        },3000)
+        
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(error.response);
+        if(error.response.data.message){
+          toast.error(error.response.data.message,{
+            style: {
+              borderRadius: '10px',
+              background: '#333',
+              color: '#fff',
+            },
+            duration:3000
+          })
+        } else {
+          toast.error("Network error. Please try again.",{
+            style: {
+              borderRadius: '10px',
+              background: '#333',
+              color: '#fff',
+            },
+            duration:3000
+          })
+        }
+
       });
   };
 
@@ -73,22 +106,23 @@ export default function DoctorLogin() {
             name="username"
             placeholder="Username"
             className="input-field"
+            onChange={(e)=>handleChange(e)}
           />
         </div>
         <div className="input-group">
           <img src={Password} alt="Password" className="input-logo" />
           <input
+            type="password"
             name="password"
             placeholder="Password"
             className="input-field"
+            onChange={(e)=>handleChange(e)}
           />
         </div>
       </div>
       <div className="btn-cont">
         <button
-          onClick={() => {
-            navigate("/doctor/menu");
-          }}
+          onClick={(e) => login(e)}
           className="btn prim"
         >
           Login

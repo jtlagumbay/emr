@@ -22,7 +22,7 @@ export default function PatientInfo({data, button}) {
         {/* Patient Details */}
         <div className="d-flex flex-row">
           <div className="d-flex flex-column section-table">
-            <table class="table table-lg table-responsive">
+            <table className="table table-lg table-responsive">
               <tbody>
                 <tr>
                   <th scope="row">Name</th>
@@ -49,7 +49,7 @@ export default function PatientInfo({data, button}) {
           </div>
           <div className="d-flex flex-column">
             <p className="m-0 section-subtitle">Person to contact in-case of emergency:</p>
-            <table class="table table-lg table-responsive">
+            <table className="table table-lg table-responsive">
               <tbody>
                 <tr>
                   <th scope="row">Name</th>

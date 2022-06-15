@@ -1,8 +1,8 @@
 import axios from 'axios';
-import moment from 'moment';
 
 
 //Common Utility Functions
+
 
 export const refreshPage = () => {
     window.location.reload();
@@ -57,9 +57,9 @@ export const formatMDY = (date) => {
     return stringDate[1] + "-" + stringDate[2] + "-" + stringDate[0]
 }
 
-export const formatYDM = (date) => {
-    return(moment(date).format('YYYY-MM-DD'))
-}
+// export const formatYDM = (date) => {
+//     return(moment(date).format('YYYY-MM-DD'))
+// }
 
 export const validateEmail = (email) => {
     if(email === "") {
@@ -90,52 +90,86 @@ export const formatNum = (num) => {
 /***************************
  * Local Storage Utilities
  ***************************/
-
-//return user data from local storage
-export const getUser = () => {
-    const userStr = localStorage.getItem('user');
-    if(userStr) return JSON.parse(userStr);
-    else return null;
+export const getUserType = () =>{
+  const type = localStorage.getItem("type");
+  if(type) return type;
+  else return null;
+}
+export const getDoctorInfo = ()=>{
+  let info = {};
+  info.name = localStorage.getItem("doc_name")
+  info.specialization = localStorage.getItem("doc_specialization")
+  if(info) return info;
+  else return null;
 }
 
-//return role id from local storage
-export const getRoleId = () => {
-    return localStorage.getItem('role_id').replace(/['"]+/g, '') || null;
+
+export const getPatientInfo = ()=>{
+  
+  let info={};
+  info.id = localStorage.getItem("px_id")
+  info.name = localStorage.getItem("px_name")
+  info.bday = localStorage.getItem("px_b_day")
+  info.age =  getAge(localStorage.getItem("px_b_day"))
+  info.sex = localStorage.getItem("px_sex")
+  info.contact_no = localStorage.getItem("px_contact_no")
+  info.emergency_name = localStorage.getItem("px_emergency_name")
+  info.emergency_contact = localStorage.getItem("px_emergency_no")
+  if(info) return info;
+  else return null;
 }
 
-//return token from local storage
-export const getToken = () => {
-    return localStorage.getItem('token') || null;
-}
 
-//return token from local storage
-export const getCommissionedBy = () => {
-    return localStorage.getItem('commissioned_by') || null;
-}
 
-export const getTokenExpiry = () => {
-    return localStorage.getItem('token_expiry') || null;
-}
 
-export const getBranch= () => {
-    return localStorage.getItem('branch') || null;
-}
 
-//remove token from local storage
-export const removeUserSession = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    localStorage.removeItem('token_expiry');
-    localStorage.removeItem('role');
-    localStorage.removeItem('role_id');
-    localStorage.removeItem('branch');
-    logout();
-    refreshPage();
-}
 
-//set the token and user from local storage
-export const setUserSession = (token, user) => {
-    localStorage.setItem('token', token);
-    localStorage.setItem('user', JSON.stringify(user));
-}
+
+// //return user data from local storage
+// export const getUser = () => {
+//     const userStr = localStorage.getItem('user');
+//     if(userStr) return JSON.parse(userStr);
+//     else return null;
+// }
+
+// //return role id from local storage
+// export const getRoleId = () => {
+//     return localStorage.getItem('role_id').replace(/['"]+/g, '') || null;
+// }
+
+// //return token from local storage
+// export const getToken = () => {
+//     return localStorage.getItem('token') || null;
+// }
+
+// //return token from local storage
+// export const getCommissionedBy = () => {
+//     return localStorage.getItem('commissioned_by') || null;
+// }
+
+// export const getTokenExpiry = () => {
+//     return localStorage.getItem('token_expiry') || null;
+// }
+
+// export const getBranch= () => {
+//     return localStorage.getItem('branch') || null;
+// }
+
+// //remove token from local storage
+// export const removeUserSession = () => {
+//   localStorage.clear()
+//     // localStorage.removeItem('token');
+//     // localStorage.removeItem('user');
+//     // localStorage.removeItem('token_expiry');
+//     // localStorage.removeItem('role');
+//     // localStorage.removeItem('role_id');
+//     // localStorage.removeItem('branch');
+//     refreshPage();
+// }
+
+// //set the token and user from local storage
+// export const setUserSession = (token, user) => {
+//     localStorage.setItem('token', token);
+//     localStorage.setItem('user', JSON.stringify(user));
+// }
 
