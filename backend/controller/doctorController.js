@@ -93,24 +93,22 @@ const loginDoctor = asyncHandler(async (req, res) => {
 
   if(!username){
     res.status(400)
-    throw new Error("username required")
+    throw new Error("Username is required.")
   }
   if(!password){
     res.status(400)
-    throw new Error("password required")
+    throw new Error("Password is required.")
   }
 
   const doctor = await Doctor.findOne({username: username})
   if(doctor && (bcrypt.compareSync(password, doctor.password))){
     res.status(200).json({
-      message: "patient login sucessful",
-      _id:doctor._id,
-      name:doctor.name,
-      username:doctor.username
+      message: "Login successful.",
+      data:{doctor}
     })
   } else {
     res.status(400)
-    throw new Error("invalid credentials")
+    throw new Error("Error! Invalid credentials.")
   }
 
 })

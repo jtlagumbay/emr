@@ -5,7 +5,7 @@ const {getAllPatients, createPatient, updatePatient, deletePatient, loginPatient
 
 
 router.post('/login', loginPatient)
-router.get('/getAll', getAllPatients)
+router.post('/getAll', getAllPatients)
 router.post('/get/:id', getPatient)
 router.post('/create', createPatient)
 router.post('/update/:id', updatePatient)

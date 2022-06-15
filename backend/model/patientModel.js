@@ -15,7 +15,7 @@ const patientSchema = mongoose.Schema({
     enum: ['f', 'm', 'b'],
     required:[true, 'Sex is required']
   },
-  number: {
+  contact_no: {
     type: String,
   },
   emergency_name: {

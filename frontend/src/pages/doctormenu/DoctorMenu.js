@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import { getAllDoctors, loginDoctor } from "../../utilities/apiCalls/doctorAPI";
 import { useNavigate } from "react-router-dom";
 import NavBar from '../../components/NavBar';
+import { getDoctorInfo, getUserType } from "../../utilities/common";
+
 
 import "./DoctorMenu.css";
 
@@ -13,12 +15,11 @@ import Search from "../../assets/doctor/search.png";
 
 export default function DoctorMenu() {
   const navigate = useNavigate();
-  const doctorInfo = {name:"Stephen Strange", specialization:"Neurosurgery"}
+  
   return (
     <>
     <NavBar 
         type="doctor"
-        data={doctorInfo}
         withBack={false}
       />
 

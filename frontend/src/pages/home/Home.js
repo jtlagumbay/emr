@@ -48,7 +48,7 @@ export default function Home() {
       </div>
 
       {/* <div className="banner">
-        <h6 classname="head" style={{ color: "white" }}>
+        <h6 classMame="head" style={{ color: "white" }}>
           {" "}
           MediVAULT: A Self-help Medical Record Management System
         </h6>

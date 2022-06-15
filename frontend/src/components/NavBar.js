@@ -7,12 +7,11 @@ import Logo from "../assets/navbar/logo.png"
 import './NavBar.css'
 import { useNavigate,useHistory } from 'react-router-dom'
 import toast from 'react-hot-toast'
+import { getDoctorInfo } from "../utilities/common.js"
 
 
 export default function ({type, withBack, data}) {
   const navigate = useNavigate()
-
-  const doctorInfo = {name:"Stephen Strange", specialization:"Neurosurgery"}
 
 
   function logout(){
@@ -26,6 +25,7 @@ export default function ({type, withBack, data}) {
         })
     setTimeout(()=>{
       navigate("/")
+      localStorage.clear()
     }, 3000)
   }
   if(type==="patient")
@@ -51,7 +51,10 @@ export default function ({type, withBack, data}) {
     </div>
   )}
   else if(type==="doctor")
-  {return (
+  
+  {
+    const doctorInfo = getDoctorInfo();
+    return (
     <div className="navbar">
       <div className="navbar-item"> 
         {withBack&&(<button onClick={()=>navigate(-1)} className="navbar-logout">

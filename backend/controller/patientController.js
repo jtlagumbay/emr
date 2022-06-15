@@ -52,30 +52,34 @@ const createPatient = asyncHandler(async (req, res) => {
   const {name, b_day, sex, contact_no, username, password, emergency_name, emergency_no} = req.body
   if(!name){
     res.status(400)
-    throw new Error('name is required')
+    throw new Error('Name is required.')
   }
   if(!b_day){
     res.status(400)
-    throw new Error('b_day is required')
+    throw new Error('Birthday is required.')
   }
   if(!sex){
     res.status(400)
-    throw new Error('sex is required')
+    throw new Error('Sex is required.')
   }
+  // if(!contact_no){
+  //   res.status(400)
+  //   throw new Error('Contact number is required')
+  // }
   if(!username){
     res.status(400)
-    throw new Error('username is required')
+    throw new Error('Username is required.')
   }
   if(!password){
     res.status(400)
-    throw new Error('password is required')
+    throw new Error('Password is required.')
   }
 
   // Check if patient already exists
   const patientExists = await Patient.findOne({username})
   if(patientExists){
     res.status(400)
-    throw new Error('patient already exists ')
+    throw new Error('Patient username already exists.')
   }
 
   // Hash password
@@ -94,14 +98,14 @@ const createPatient = asyncHandler(async (req, res) => {
 
   if(patient){
     res.status(201).json({
-      message:"patient sucessfully created",
+      message:"Patient created successfully/",
       _id:patient._id,
       name:patient.name,
       username:patient.username
     })
   } else {
     res.status(400)
-    throw new Error('invalid patient data')
+    throw new Error('Invalid patient data.')
   }
 
   // res.status(200).json({message: "patient created successfully"})
@@ -115,12 +119,12 @@ const updatePatient = asyncHandler(async (req, res) => {
   
   if(!patient){
     res.status(400)
-    throw new Error("patient not found")
+    throw new Error("Patient not found.")
   }
 
   const updated = await Patient.findByIdAndUpdate(req.params.id, req.body,  {new:true})
   
-  res.status(200).json({ message: "patient updated successfully "})
+  res.status(200).json({ message: "Patient updated successfully. "})
 })
 
 // @desc  delete patients
@@ -131,11 +135,11 @@ const deletePatient = asyncHandler(async (req, res) => {
   
   if(!patient){
     res.status(400)
-    throw new Error("Patient not found")
+    throw new Error("Patient not found.")
   }
 
   patient.remove()  
-  res.status(200).json({message: "patient deleted successfully"})
+  res.status(200).json({message: "Patient deleted successfully."})
 })
 
 // @desc  login patient
@@ -146,24 +150,22 @@ const loginPatient = asyncHandler(async (req, res) => {
 
   if(!username){
     res.status(400)
-    throw new Error("username required")
+    throw new Error("Username is required.")
   }
   if(!password){
     res.status(400)
-    throw new Error("password required")
+    throw new Error("Password is required.")
   }
 
   const patient = await Patient.findOne({username: username})
   if(patient && (bcrypt.compareSync(password, patient.password))){
     res.json({
-      message: "patient login sucessful",
-      _id:patient._id,
-      name:patient.name,
-      username:patient.username
+      message: "Login successful.",
+      data:patient
     })
   } else {
     res.status(400)
-    throw new Error("invalid credentials")
+    throw new Error("Error! Invalid credentials.")
   }
 
 })

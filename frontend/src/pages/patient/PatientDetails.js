@@ -2,19 +2,15 @@ import React, {useState} from 'react'
 import PatientInfo from '../../components/PatientInfo'
 import History from '../../components/History'
 import NavBar from '../../components/NavBar';
+import { getPatientInfo } from '../../utilities/common';
 
 export default function PatientDetails() {
   document.body.style = 'background: white;';
-  const [patientInfo, setPatientInfo] = useState({
-    name: "Juana Dela Cruz",
-    bday: "Jun 1, 2022",
-    age:  "20",
-    sex: "Female",
-    contact_no: "09123445",
-    emergency_name: "Teodora",
-    emergency_contact: "091234"
-  })
+  const patientInfo = getPatientInfo();
 
+  
+  const patient = getPatientInfo()
+  console.log(patient)
   const [history, setHistory] = useState([
     {
       date:"May 1, 2022",
