@@ -24,7 +24,7 @@ export default function App() {
           <Route path="/doctor/menu" element={<DoctorMenu />} />
           <Route path="/doctor/search-patient" element={<DoctorSearch />} />
           <Route path="/doctor/display-patient" element={<DoctorDisplay />} />
-          <Route path="/doctor/view" element={<DoctorViewPatient />} />
+          <Route path="/doctor/view/:id" element={<DoctorViewPatient />} />
           <Route path="/patient/login" element={<PatientLogin />} />
           <Route path="/patient/signup" element={<PatientSignup />} />
           <Route path="/patient/details" element={<PatientDetails />} />

@@ -38,7 +38,7 @@ export default function PatientInfo({data, button}) {
                 </tr>
                 <tr>
                   <th scope="row">Sex</th>
-                  <td>{(data.sex==="f")?"Female":(data.sex==="m")?"Male":(data.sex==="b")?"Binary":null}</td>
+                  <td>{(data.sex==="f")?"Female":(data.sex==="m")?"Male":(data.sex==="b")?"Non-Binary":null}</td>
                 </tr>
                 <tr>
                   <th scope="row">Contact no.</th>

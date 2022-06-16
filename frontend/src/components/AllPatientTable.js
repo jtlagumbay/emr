@@ -1,8 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 import "./AllPatientTable.css"
 
 export default function AllPatientTable({data, headers}) {
+  const navigate = useNavigate();
 
   const rows = data.map((row, index)=>{
     let rowData = [];
@@ -19,7 +21,7 @@ export default function AllPatientTable({data, headers}) {
     return <tr key={row.id}>
       {rowData.splice(1).map((data, index) => 
       <td key={index} data-heading={data.key} className="p-2">{data.val}</td>)}
-      <td key={index+"button"} className="p-2 text-center"><button className="his-button">View Details</button></td>
+      <td key={index+"button"} className="p-2 text-center"><button className="his-button" onClick={()=>{navigate("/doctor/view/"+row.id)}}>View Details</button></td>
     </tr>
 
   })
