@@ -1,7 +1,8 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 
 export default function History({data, headers}) {
-
+  const navigate = useNavigate()
   const rows = data.map((row, index)=>{
     let rowData = [];
     let i = 0;
@@ -17,7 +18,9 @@ export default function History({data, headers}) {
     return <tr key={row.id}>
       {rowData.map((data, index2) => 
       <td key={index+index2} data-heading={data.key}>{data.val}</td>)}
-      <td key={index+"button"} ><button className="his-button">View Details</button></td>
+      <td key={index+"button"} ><button onClick={() => {
+              navigate("/patient/view/:id");
+            }}className="his-button">View Details</button></td>
     </tr>
 
   })
