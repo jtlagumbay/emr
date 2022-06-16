@@ -98,14 +98,16 @@ const createPatient = asyncHandler(async (req, res) => {
 
   if(patient){
     res.status(201).json({
-      message:"Patient created successfully/",
+      message:"Patient created successfully. Proceed to login.",
       _id:patient._id,
       name:patient.name,
       username:patient.username
     })
   } else {
-    res.status(400)
-    throw new Error('Invalid patient data.')
+    res.status(400).json({
+      error:"Invalid patient data"
+    })
+    // throw new Error('Invalid patient data.')
   }
 
   // res.status(200).json({message: "patient created successfully"})

@@ -25,7 +25,7 @@ export default function PatientInfo({data, button}) {
             <table className="table table-lg table-responsive">
               <tbody>
                 <tr>
-                  <th scope="row">Name</th>
+                  <th scope="row" width={100}>Name</th>
                   <td>{data.name}</td>
                 </tr>
                 <tr>
@@ -38,7 +38,7 @@ export default function PatientInfo({data, button}) {
                 </tr>
                 <tr>
                   <th scope="row">Sex</th>
-                  <td>{data.sex}</td>
+                  <td>{(data.sex==="f")?"Female":(data.sex==="m")?"Male":(data.sex==="b")?"Binary":null}</td>
                 </tr>
                 <tr>
                   <th scope="row">Contact no.</th>
