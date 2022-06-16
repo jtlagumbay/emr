@@ -33,7 +33,9 @@ const createDiagnosis = asyncHandler(async (req, res) => {
    prescription: prescription,
   })
 
-  res.status(200).json(newDiagnosis)
+  res.status(200).json({
+    message:"Diagnosis saved successfully."
+  })
 })
 
 // @desc  get all diagnosis

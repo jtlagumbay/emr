@@ -35,7 +35,6 @@ export default function DoctorDisplay(){
     },
   ]
   const [patients, setPatients] = useState([])
-
   useEffect(()=>{
 
     var axios = require("axios");

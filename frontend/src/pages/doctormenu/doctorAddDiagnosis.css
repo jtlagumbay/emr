@@ -1,0 +1,62 @@
+.diagnosisItem{
+  display:flex;
+  align-items: flex-start;
+}
+
+.item-number{
+  margin-right: 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.item-input{
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.item-add{
+  border: 0.5px solid rgba(0, 0, 0, 0.02);
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color:#102457;
+  background-color: #fff;
+}
+
+.item-add:hover{
+  /* background-color: #e4e4e4; */
+  color: #05143a;
+  font-weight: 800;
+}
+
+.page-buttons{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.border{
+  border: 0.5px solid rgba(0, 0, 0, 0.2) !important;
+  color: #05143a;
+  margin-right:2rem;
+}
+.section-cols{
+  display: flex;
+  flex-direction:row;
+}
+
+.cols {
+  width: 50%;
+}
+
+.mr{
+  margin-right: 4rem;
+}
+.page-footnote{
+  display: flex;
+  justify-content: flex-end;
+}
+.page-title{
+  font-weight: 600;
+  font-size: 2rem;
+  color: #05143a;
+}

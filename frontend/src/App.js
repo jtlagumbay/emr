@@ -10,6 +10,7 @@ import PatientDetails from "./pages/patient/PatientDetails.js";
 import PatientLogin from "./pages/patient/PatientLogin.js";
 import PatientSignup from "./pages/patient/PatientSignup.js";
 import PatientViewDetails from "./pages/patient/PatientViewDetails.js";
+import DoctorAddDiagnosis from "./pages/doctormenu/DoctorAddDiagnosis.js";
 
 export default function App() {
   return (
@@ -21,11 +22,15 @@ export default function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+
           <Route path="/doctor/login" element={<DoctorLogin />} />
           <Route path="/doctor/menu" element={<DoctorMenu />} />
           <Route path="/doctor/search-patient" element={<DoctorSearch />} />
           <Route path="/doctor/display-patient" element={<DoctorDisplay />} />
           <Route path="/doctor/view/:id" element={<DoctorViewPatient />} />
+          <Route path="/doctor/add-diagnosis/:id" element={<DoctorAddDiagnosis />} />
+
+
           <Route path="/patient/login" element={<PatientLogin />} />
           <Route path="/patient/signup" element={<PatientSignup />} />
           <Route path="/patient/details" element={<PatientDetails />} />

@@ -17,6 +17,7 @@ export default function AllPatientTable({data, headers}) {
         });
         i++;
     }
+    console.log(row)
 
     return <tr key={row.id}>
       {rowData.splice(1).map((data, index) => 

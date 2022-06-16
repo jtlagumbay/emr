@@ -1,15 +1,18 @@
 import React from 'react'
-
+import { useNavigate } from 'react-router-dom'
+import { formatDate } from '../utilities/common'
 export default function PatientInfo({data, button}) {
-  
+  const navigate = useNavigate()
+  // console.log(data)
   function renderButton(){
     if(button.toLowerCase() ==="edit profile"){
       return <button className="button primary">Edit Profile</button>
     }
     else if(button.toLowerCase() === "add diagnosis"){
-      return <button className="button primary">Add diagnosis</button>
+      return <button className="button primary" onClick={()=>navigate("/doctor/add-diagnosis/"+data.id)}>Add diagnosis</button>
+    } else{
+      return <button className="button primary" style={{display:"none"}} onClick={()=>navigate("/doctor/add-diagnosis/"+data.id)}>Add diagnosis</button>
     }
-
   }
 
   return (
@@ -30,7 +33,7 @@ export default function PatientInfo({data, button}) {
                 </tr>
                 <tr>
                   <th scope="row">Birthdate</th>
-                  <td>{data.bday}</td>
+                  <td>{formatDate(data.bday)}</td>
                 </tr>
                 <tr>
                   <th scope="row">Age</th>
@@ -38,7 +41,7 @@ export default function PatientInfo({data, button}) {
                 </tr>
                 <tr>
                   <th scope="row">Sex</th>
-                  <td>{(data.sex==="f")?"Female":(data.sex==="m")?"Male":(data.sex==="b")?"Non-Binary":null}</td>
+                  <td>{(data.sex==="f")?"Female":(data.sex==="m")?"Male":(data.sex==="b")?"Binary":null}</td>
                 </tr>
                 <tr>
                   <th scope="row">Contact no.</th>
