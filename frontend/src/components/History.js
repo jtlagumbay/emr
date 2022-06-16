@@ -19,7 +19,7 @@ export default function History({data, headers}) {
       {rowData.map((data, index2) => 
       <td key={index+index2} data-heading={data.key}>{data.val}</td>)}
       <td key={index+"button"} ><button onClick={() => {
-              navigate("/patient/view/:id");
+              navigate("/doctor/view/"+row.id);
             }}className="his-button">View Details</button></td>
     </tr>
 
