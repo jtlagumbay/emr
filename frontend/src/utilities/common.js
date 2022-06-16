@@ -121,6 +121,32 @@ export const getPatientInfo = ()=>{
 }
 
 
+// Get Doctor Name by id
+export const getDoctorById = (id)=>{
+    var axios = require("axios");
+    var qs = require("qs");
+    var data = qs.stringify({});
+    var config = {
+      method: "post",
+      url: window.$URL+"doctors/get/"+id,
+      headers: {
+        api_key: window.$API_KEY,
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+    };
+    axios(config)
+    .then(async function (response) {
+      let info = await response.data
+      return info
+      
+      
+    })
+    .catch(function (error) {
+      console.log(error)
+    });
+  // console.log(info)
+  // return info
+}
 
 
 

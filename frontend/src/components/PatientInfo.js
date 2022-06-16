@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { formatDate } from '../utilities/common'
 export default function PatientInfo({data, button}) {
   const navigate = useNavigate()
   // console.log(data)
@@ -32,7 +33,7 @@ export default function PatientInfo({data, button}) {
                 </tr>
                 <tr>
                   <th scope="row">Birthdate</th>
-                  <td>{data.bday}</td>
+                  <td>{formatDate(data.bday)}</td>
                 </tr>
                 <tr>
                   <th scope="row">Age</th>

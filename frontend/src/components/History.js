@@ -15,8 +15,10 @@ export default function History({data, headers}) {
     }
 
     return <tr key={row.id}>
-      {rowData.map((data, index2) => 
-      <td key={index+index2} data-heading={data.key}>{data.val}</td>)}
+      {rowData.splice(1).map((data, index2) => 
+      <td key={index+index2} data-heading={data.key}>{Array.isArray(data.val)===true?data.val.map((data, index)=><>
+        <span>{data}</span><br/>
+      </>):data.val}</td>)}
       <td key={index+"button"} ><button className="his-button">View Details</button></td>
     </tr>
 
