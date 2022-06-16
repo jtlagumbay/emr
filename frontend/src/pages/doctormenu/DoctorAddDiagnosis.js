@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import NavBar from '../../components/NavBar';
 import toast from "react-hot-toast";
-import { getAge } from "../../utilities/common";
+import { getAge, getDoctorInfo } from "../../utilities/common";
 import { useNavigate, useParams } from 'react-router-dom';
 import PatientInfo from '../../components/PatientInfo';
 
@@ -105,9 +105,82 @@ export default function DoctorAddDiagnosis() {
     setPrescriptionItems(list)
   }
 
-  function saveDiagnosis(){
-    console.log(prescriptionItems)
-    console.log(diagnosisItems)
+  const [click, setClick] = useState(false)
+
+  function saveDiagnosis(e){
+    e.preventDefault();
+    let diagnosis = []
+    diagnosisItems.map((data, index)=>{
+      if(data.diagnosis!==""){
+        diagnosis.push(data.diagnosis)
+      }
+    })
+    let prescription = []
+    prescriptionItems.map((data, index)=>{
+      if(data.prescription!==""){
+        prescription.push(data.prescription)
+      }
+    })
+    console.log(diagnosis)
+    console.log(prescription)
+
+    var axios = require("axios");
+    var qs = require("qs");
+    var data = qs.stringify({
+      patient_id: id,
+      doctor_id: getDoctorInfo()._id,
+      diagnosis:diagnosis,
+      prescription:prescription,
+    }, {arrayFormat: 'repeat'});
+    var config = {
+      method: "post",
+      url: window.$URL+"diagnosis/create",
+      headers: {
+        api_key: window.$API_KEY,
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      data: data,
+    };
+
+    axios(config)
+    .then(async function (response) {
+      console.log(response.data);
+      toast.success(response.data.message,{
+        style: {
+          borderRadius: '10px',
+          background: '#333',
+          color: '#fff',
+        },
+        duration:3000
+      });
+      setTimeout(()=>{
+        navigate(-1)
+      },3000)
+      
+    })
+    .catch(function (error) {
+      console.log(error.response);
+      if(error.response.data.message){
+        toast.error(error.response.data.message,{
+          style: {
+            borderRadius: '10px',
+            background: '#333',
+            color: '#fff',
+          },
+          duration:3000
+        })
+      } else if (error.response.data.error) {
+        toast.error("Network error. Please try again.",{
+          style: {
+            borderRadius: '10px',
+            background: '#333',
+            color: '#fff',
+          },
+          duration:3000
+        })
+      }
+
+    });
   }
   
   return (
@@ -184,7 +257,7 @@ export default function DoctorAddDiagnosis() {
         </div>
         <div className="page-buttons">
           <button className="button secondary border" onClick={()=>navigate(-1)}>Cancel</button>
-          <button className="button primary" onClick={e=>saveDiagnosis()}>Save</button>
+          <button className="button primary" disable={click} onClick={e=>saveDiagnosis(e)}>Save</button>
         </div>
       <br/>
       <br/>

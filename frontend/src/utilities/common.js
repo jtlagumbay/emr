@@ -97,6 +97,7 @@ export const getUserType = () =>{
 }
 export const getDoctorInfo = ()=>{
   let info = {};
+  info._id = localStorage.getItem("doc_id")
   info.name = localStorage.getItem("doc_name")
   info.specialization = localStorage.getItem("doc_specialization")
   if(info) return info;
