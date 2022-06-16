@@ -46,12 +46,12 @@ export default function DoctorViewPatient(){
         api_key: window.$API_KEY,
         "Content-Type": "application/x-www-form-urlencoded",
       },
- 
     };
     axios(config)
     .then(async function (response) {
-      console.log(response.data);
+      console.log(response);
       let info = {};
+      info.id = response.data._id
       info.name= response.data.name
       info.bday= response.data.b_day
       info.age= getAge(response.data.b_day)
@@ -74,6 +74,7 @@ export default function DoctorViewPatient(){
     });
   },[])
 
+  console.log(patientInfo)
 
   return (
     <>
