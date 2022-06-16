@@ -7,7 +7,7 @@ import Logo from "../assets/navbar/logo.png"
 import './NavBar.css'
 import { useNavigate,useHistory } from 'react-router-dom'
 import toast from 'react-hot-toast'
-import { getDoctorInfo } from "../utilities/common.js"
+import { getDoctorInfo, getPatientInfo } from "../utilities/common.js"
 
 
 export default function ({type, withBack, data}) {
@@ -29,7 +29,9 @@ export default function ({type, withBack, data}) {
     }, 3000)
   }
   if(type==="patient")
-  {return (
+  {
+    const patient = getPatientInfo()
+    return (
     <div className="navbar">
       <div className="navbar-item"> 
         {withBack&&(<button onClick={()=>navigate(-1)} className="navbar-logout">
@@ -42,7 +44,7 @@ export default function ({type, withBack, data}) {
       </div>
       <div className="navbar-item">
         <img src={User} alt ="back" className="arrow-icon"/>
-        <h1 className="navbar-name">{data.name}</h1>
+        <h1 className="navbar-name">{patient.name}</h1>
         <button onClick={logout} className="navbar-logout">
           <img src={Logout} alt ="back" className="arrow-icon logout"/>
         </button>

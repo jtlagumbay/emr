@@ -115,6 +115,7 @@ export default function DoctorViewPatient(){
           console.log(error)
         });
         info.diagnosis = data.diagnosis
+        info.prescription = data.prescription
         setHistory(oldArray=>[...oldArray, info])
 
 
@@ -133,8 +134,13 @@ export default function DoctorViewPatient(){
     });
   },[])
   
-  console.log(history)
+  // console.log(history)
+  const [historyData, setHistoryData] = useState([])
+  React.useEffect(()=>{
+      const newArray = Array.from(new Set(history.map(el => JSON.stringify(el)))).map(el => JSON.parse(el));
+      setHistoryData(newArray)
 
+  },[history])
 
 
   return (
@@ -157,7 +163,7 @@ export default function DoctorViewPatient(){
       <br />
       <br />
 
-      <History data={history} headers={["DATE", "DOCTOR", "DIAGNOSIS", ""]} />
+      <History type={"doctor"} data={historyData} headers={["DATE", "DOCTOR", "DIAGNOSIS", ""]} />
       {/* Medical Records */}
       <br />
       <br />
