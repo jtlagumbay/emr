@@ -150,14 +150,14 @@ export default function DoctorViewPatient(){
         withBack={true}
       />
     <div className="container">
-        <div className="sinput-group">
+        {/* <div className="sinput-group">
         <img src={Search} alt="Search Patient Name" className="sinput-logo" />
         <input
           name="search"
           placeholder="Search Patient Name"
           className="sinput-field"
         />
-      </div>
+      </div> */}
       <br />
       <PatientInfo data={patientInfo} button={"Add Diagnosis"} />
       <br />

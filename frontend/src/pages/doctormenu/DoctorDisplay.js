@@ -84,14 +84,17 @@ export default function DoctorDisplay(){
       />
 
     <div className="container">
-        <div className="sinput-group">
+        {/* <div className="sinput-group">
         <img src={Search} alt="Search Patient Name" className="sinput-logo" />
         <input
           name="search"
           placeholder="Search Patient Name"
           className="sinput-field"
         />
-      </div>
+      </div> */}
+      <br/>
+      <h1 className="page-title">All Patients</h1>
+            <br/>
 
       <AllPatientTable 
         data = {patients}

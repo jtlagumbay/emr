@@ -56,17 +56,19 @@ export default function History({type, data, headers}) {
         <tbody>
             {data.map((data, index)=>{
               // console.log(data)
-              return(
-              <tr>
-                <td>{data.date}</td>
-                <td>{data.doctor}</td>
-                <td>{data.diagnosis.map((data, index)=>{
+              return(<>
+              <tr className="history-tr">
+                <td className="history-td">{data.date}</td>
+                <td className="history-td">{data.doctor}</td>
+                <td className="history-td">{data.diagnosis.map((data, index)=>{
                   return(<>
-                    <span>{data}</span><br/></>
+                    <span className="history-td">{data}</span><br/></>
                   )
                 })}</td>
-                <td>{renderButton(data)}</td>
+                <td className="history-td"> {renderButton(data)}</td>
               </tr>
+      
+              </>
 
             )})
             }
