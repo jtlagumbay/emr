@@ -47,6 +47,7 @@ export default function History({type, data, headers}) {
     <div className="section">
       <h3 className='section-title m-0'>Medical History</h3>
       <br/>
+      {data.length>0?
       <table className="table table-lg table-responsive">
         <thead>
           <tr>
@@ -75,7 +76,8 @@ export default function History({type, data, headers}) {
             )})
             }
         </tbody>
-      </table>
+      </table>:<p className="item-number">No Medical Records Found!</p>
+      }
     </div>
   )
 }
