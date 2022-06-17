@@ -64,7 +64,7 @@ export default function DoctorSearch(){
 
   const [result, setResult] = useState([])
   function handleSearch(){
-    const test = new RegExp(searchName)
+    const test = new RegExp(searchName.toLowerCase())
    const result = patients.filter(info=>test.test(info.name.toLowerCase()))
   setResult(result)
   }
