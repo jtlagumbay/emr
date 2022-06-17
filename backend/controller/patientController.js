@@ -28,13 +28,10 @@ const getAllPatients = asyncHandler(async (req, res) => {
 // access Private
 const getPatient = asyncHandler(async (req, res) => {
   const patient = await Patient.findById(req.params.id)
-  
   if(!patient){
     res.status(400)
     throw new Error("patient not found")
   }
-
-
   res.status(200).json({ 
     _id: patient._id,
     name: patient.name,

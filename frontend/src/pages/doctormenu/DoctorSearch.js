@@ -11,6 +11,7 @@ export default function DoctorSearch(){
   const navigate = useNavigate()
   const [searchName, setSearchName] = useState("")
   const [patients, setPatients] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
   useEffect(()=>{
 
     var axios = require("axios");
@@ -37,6 +38,10 @@ export default function DoctorSearch(){
         info.bday= data.b_day
         info.age= getAge(data.b_day)
         setPatients(oldArray=>[...oldArray, info])
+
+        if(index===response.data.length-1){
+          setIsLoading(false)
+        }
       })
     })
     .catch(function (error) {
@@ -80,16 +85,23 @@ export default function DoctorSearch(){
           placeholder="Search Patient Name"
           className="sinput-field"
           onChange={(e)=>{setSearchName(e.target.value)}}
+          disable={isLoading}
         />
         </div>
         <div className="results-group">
-          {result.length>0?result.map((data, index)=>{
-            return(<>
-              <button className="button secondary border item-number result"onClick={()=>navigate("/doctor/view/"+data.id)}>{data.name}</button>
-              <br/><br/>
-              </>
-            )
-          }):<h3 className="item-number">Patient not found!</h3>}
+  
+          {result.length>0
+          ?
+          result.map((data, index)=>{
+          return(
+          <>{console.log(data)}
+            <button className="button secondary border item-number result"onClick={()=>navigate("/doctor/view/"+data.id)}>{data.name}</button>
+            <br/><br/>
+          </>)
+          })
+          :
+          isLoading?<h3 className="item-number">Loading data... Please wait for a while</h3>
+          :<h3 className="item-number">Patient not found!</h3>}
         </div>
     </div>
     </>

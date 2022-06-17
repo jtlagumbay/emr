@@ -11,7 +11,7 @@ export default function PatientViewDetails(){
   document.body.style = "background: white;";
   const {id} = useParams()
   const {state} = useLocation()
-  console.log(state)
+  // console.log(state)
   // useEffect(()=>{
   //   var axios = require("axios");
   //   var qs = require("qs");
