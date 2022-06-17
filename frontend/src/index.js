@@ -4,7 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-window.$URL = "https://emr-2.herokuapp.com/emr/api/";
+// window.$URL = "https://emr-2.herokuapp.com/emr/api/";
+window.$URL = "http://localhost:5000/emr/api/";
+
 window.$API_KEY = "erty123";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
