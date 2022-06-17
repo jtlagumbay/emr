@@ -70,9 +70,9 @@ export default function DoctorLogin() {
         
       })
       .catch(function (error) {
-        console.log(error.response);
-        if(error.response.data.message){
-          toast.error(error.response.data.message,{
+        console.log(error.response.data.error);
+        if(error.response.data.error){
+          toast.error(error.response.data.error,{
             style: {
               borderRadius: '10px',
               background: '#333',

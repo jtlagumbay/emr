@@ -138,7 +138,7 @@ export default function DoctorViewPatient(){
   const [historyData, setHistoryData] = useState([])
   React.useEffect(()=>{
       const newArray = Array.from(new Set(history.map(el => JSON.stringify(el)))).map(el => JSON.parse(el));
-      setHistoryData(newArray)
+      setHistoryData(newArray.sort(function (a, b) { return new Date(b.date) - new Date(a.date); }))
 
   },[history])
 

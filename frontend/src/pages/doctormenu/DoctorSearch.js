@@ -84,9 +84,10 @@ export default function DoctorSearch(){
         </div>
         <div className="results-group">
           {result.length>0?result.map((data, index)=>{
-            return(
-              <button className="button secondary border item-number"onClick={()=>navigate("/doctor/view/"+data.id)}>{data.name}</button>
-
+            return(<>
+              <button className="button secondary border item-number result"onClick={()=>navigate("/doctor/view/"+data.id)}>{data.name}</button>
+              <br/><br/>
+              </>
             )
           }):<h3 className="item-number">Patient not found!</h3>}
         </div>

@@ -1,7 +1,11 @@
-.history-tr>td{
+/* .history-tr>td{
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.5) !important;
   padding-bottom:5rem !important;
-}
+} */
 .history-td{
   padding-bottom: 2rem !important;
+}
+
+.history-tr{
+padding: 2rem !important;
 }

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useLocation, useNavigate } from "react-router-dom";
 
+import './History.css'
+
 export default function History({type, data, headers}) {
   const navigate = useNavigate()
   const {state} = useLocation()
@@ -54,7 +56,7 @@ export default function History({type, data, headers}) {
           </tr>
         </thead>
         <tbody>
-            {data.map((data, index)=>{
+            {data.sort(function (a, b) { return new Date(b.date) - new Date(a.date); }).map((data, index)=>{
               // console.log(data)
               return(<>
               <tr className="history-tr">
