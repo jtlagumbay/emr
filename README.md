@@ -1,5 +1,6 @@
 # MediVault: a self-help medical record management system
 by Jhoanna Rica Lagumbay, Pinky Grace Marfa, and Ellenmarie Frances Puyot
+
 In Partial Fulfilment of the Course Requirements for CMSC 21 – Fundamentals of Programming 
 The present system of the local family clinic is still manually done, where medical information is written and accessed manually by the doctors, nurses and assistants without using the latest technology. Moreover, the patients will have to keep and carry a physical copy of the prescription of their medication given by the doctor. All the records will then be stored in a pile of files for the different patients, where finding and managing the lists may be tedious once a problem occurs.
 # Utilizing fundamentals of programming - arrays, pointers, linked lists, file manipulation, polymorphism through MERN
