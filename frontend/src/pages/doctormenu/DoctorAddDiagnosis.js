@@ -121,8 +121,8 @@ export default function DoctorAddDiagnosis() {
         prescription.push(data.prescription)
       }
     })
-    console.log(diagnosis)
-    console.log(prescription)
+    // console.log(diagnosis)
+    // console.log(prescription)
 
     var axios = require("axios");
     var qs = require("qs");
@@ -144,7 +144,7 @@ export default function DoctorAddDiagnosis() {
 
     axios(config)
     .then(async function (response) {
-      console.log(response.data);
+      // console.log(response.data);
       toast.success(response.data.message,{
         style: {
           borderRadius: '10px',

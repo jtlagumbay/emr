@@ -25,7 +25,7 @@ export default function PatientSignup() {
       [e.target.name]: e.target.value,
     }));
   };
-  console.log(formData)
+  // console.log(formData)
   const signup = async (e) => {
     e.preventDefault();
     var axios = require("axios");
@@ -43,9 +43,9 @@ export default function PatientSignup() {
 
     axios(config)
       .then(async function (response) {
-        console.log(response.data);
+        // console.log(response.data);
         let data = await response.data.data
-        console.log(data)
+        // console.log(data)
         toast.success(response.data.message,{
           style: {
             borderRadius: '10px',

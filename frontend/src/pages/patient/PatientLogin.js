@@ -18,7 +18,7 @@ export default function PatientLogin() {
 
   const { username, password } = formData;
 
-  console.log(formData)
+  // console.log(formData)
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -44,9 +44,9 @@ export default function PatientLogin() {
 
     axios(config)
       .then(async function (response) {
-        console.log(response.data);
+        // console.log(response.data);
         let data = await response.data.data
-        console.log(data)
+        // console.log(data)
         localStorage.setItem("type", "patient");
         localStorage.setItem("px_id", data._id);
         localStorage.setItem("px_name", data.name);

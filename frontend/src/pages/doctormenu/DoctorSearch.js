@@ -94,7 +94,7 @@ export default function DoctorSearch(){
           ?
           result.map((data, index)=>{
           return(
-          <>{console.log(data)}
+          <>
             <button className="button secondary border item-number result"onClick={()=>navigate("/doctor/view/"+data.id)}>{data.name}</button>
             <br/><br/>
           </>)

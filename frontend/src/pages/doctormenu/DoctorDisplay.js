@@ -75,7 +75,7 @@ export default function DoctorDisplay(){
         })
     });
   },[])
-  console.log(patients)
+  // console.log(patients)
   return (
     <>
      <NavBar 

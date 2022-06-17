@@ -56,7 +56,7 @@ export default function PatientDetails() {
     axios(config)
     .then( async function (response) {
       history.length=0;
-      console.log(response.data);
+      // console.log(response.data);
       await response.data.map( async (data,index)=>{
         history.length=0
         let info = {};
@@ -125,12 +125,12 @@ export default function PatientDetails() {
   const [showEdit, setShowEdit] = useState(false)
   const [showProfile, setShowProfile] = useState(false)
   function handleEdit(){
-    console.log("edit")
+    // console.log("edit")
     setShowEdit(true)
   }
   function handleSave(e){
     e.preventDefault()
-    console.log(formData)
+    // console.log(formData)
       var axios = require("axios");
     var qs = require("qs");
     var data = qs.stringify(formData);
@@ -146,9 +146,9 @@ export default function PatientDetails() {
 
     axios(config)
       .then(async function (response) {
-        console.log(response.data);
+        // console.log(response.data);
         let data = await response.data.data
-        console.log(data)
+        // console.log(data)
         toast.success(response.data.message,{
           style: {
             borderRadius: '10px',
@@ -172,7 +172,7 @@ export default function PatientDetails() {
         
       })
       .catch(function (error) {
-        console.log(error.response);
+        // console.log(error.response);
         if(error.response.data.message){
           toast.error(error.response.data.message,{
             style: {

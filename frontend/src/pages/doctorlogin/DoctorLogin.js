@@ -49,7 +49,7 @@ export default function DoctorLogin() {
 
     axios(config)
       .then(async function (response) {
-        console.log(response.data);
+        // console.log(response.data);
         let data = await response.data.data.doctor
         localStorage.setItem("type", "doctor");
         localStorage.setItem("doc_id", data._id);
