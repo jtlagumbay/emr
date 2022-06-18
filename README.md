@@ -32,3 +32,12 @@ MediVault will serve as an electronic medical record to manage medical informati
 # - build a system where patients can access their own medical history including, medical diagnosis, medication, and doctor.
 
 Happy hacking!
+
+---------------------------------------------------------------------------------------------------------
+# SET UP LOCALHOST
+1. Clone the repository in your local.
+2. Open the reposity in you Visual Studio Code or other integrated development environments (IDEs)
+3. To run in your localhost, open Terminal and input:
+`npm run dev `
+4. Wait and explore the program. 
+---------------------------------------------------------------------------------------------------------
